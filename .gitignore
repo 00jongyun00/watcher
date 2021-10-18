@@ -1,0 +1,9 @@
+.idea
+database.yml
+schema.sql
+run.sh
+run.bat
+vigilate
+.DS_Store
+*.code-workspace
+coverage.out
