@@ -1,5 +1,4 @@
-
-# Vigilate
+# Pusher
 
 This is the source code for the second project in the Udemy course Working with Websockets in Go (Golang).
 
@@ -9,48 +8,51 @@ A dead simple monitoring service, intended to replace things like Nagios.
 
 Build in the normal way on Mac/Linux:
 
-~~~
+```
 go build -o vigilate cmd/web/*.go
-~~~
+```
 
 Or on Windows:
 
-~~~
+```
 go build -o vigilate.exe cmd/web/.
-~~~
+```
 
 Or for a particular platform:
 
-~~~
+```
 env GOOS=linux GOARCH=amd64 go build -o vigilate cmd/web/*.go
-~~~
+```
 
 ## Requirements
 
 Vigilate requires:
-- Postgres 11 or later (db is set up as a repository, so other databases are possible)
-- An account with [Pusher](https://pusher.com/), or a Pusher alternative 
-(like [ipê](https://github.com/dimiro1/ipe))
+
+-   Postgres 11 or later (db is set up as a repository, so other databases are possible)
+-   An account with [Pusher](https://pusher.com/), or a Pusher alternative
+    (like [ipê](https://github.com/dimiro1/ipe))
 
 ## Run
 
 First, make sure ipê is running (if you're using ipê):
 
 On Mac/Linux
-~~~
+
+```
 cd ipe
-./ipe 
-~~~
+./ipe
+```
 
 On Windows
-~~~
+
+```
 cd ipe
 ipe.exe
-~~~
+```
 
 Run with flags:
 
-~~~
+```
 ./vigilate \
 -dbuser='tcs' \
 -pusherHost='localhost' \
@@ -59,11 +61,11 @@ Run with flags:
 -pusherSecret='abc123' \
 -pusherApp="1" \
 -pusherSecure=false
-~~~~
+```
 
 ## All Flags
 
-~~~~
+```
 tcs@grendel vigilate-udemy % ./vigilate -help
 Usage of ./vigilate:
   -db string
@@ -96,5 +98,4 @@ Usage of ./vigilate:
         pusher secret
    -pusherSecure
         pusher server uses SSL (true or false)
-~~~~
-
+```
