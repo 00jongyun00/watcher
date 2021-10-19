@@ -1,15 +1,29 @@
+<script src="/static/admin/js/pusher.min.js"></script>
+
+
 <script>
-    let attention = Prompt();
+  let pusher = new Pusher("{{.PreferenceMap["pusher-key"]}}", {
+    authEndPoint: "/pusher/auth",
+    wsHost: "0.0.0.0",
+    wsPort: 4001,
+    forceTLS: false,
+    enabledTransports: ["ws", "wss"],
+    disabledTransports: [],
+  });
 
-    {{if .Flash != ""}}
-        successAlert('{{.Flash}}')
-    {{end}}
+  let publicChannel = pusher.subscribe("public-channel");
 
-    {{if .Warning != ""}}
-        warningAlert('{{.Warning}}')
-    {{end}}
+  let attention = Prompt();
 
-    {{if .Error != ""}}
-        errorAlert('{{.Error}}')
-    {{end}}
+  {{if .Flash != ""}}
+      successAlert('{{.Flash}}')
+  {{end}}
+
+  {{if .Warning != ""}}
+      warningAlert('{{.Warning}}')
+  {{end}}
+
+  {{if .Error != ""}}
+      errorAlert('{{.Error}}')
+  {{end}}
 </script>
