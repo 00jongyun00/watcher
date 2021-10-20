@@ -1,0 +1,14 @@
+
+create_table("services") {
+    t.Column("id", "integer", {primary: true})
+    t.Column("service_name", "string", {"size": 255})
+    t.Column("activate", "integer", {"default": 1})
+    t.Column("icon", "string", {"size": 255})
+}
+
+sql(`
+    CREATE TRIGGER set_timestamp
+        BEFORE UPDATE on services
+        FOR EACH ROW
+    EXECUTE PROCEDURE trigger_set_timestamp();
+`)
