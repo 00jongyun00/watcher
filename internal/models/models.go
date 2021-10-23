@@ -50,9 +50,9 @@ type Host struct {
 	IPV6          string
 	Location      string
 	OS            string
-	Active       int
+	Active        int
 	CreatedAt     time.Time
-	Updated       time.Time
+	UpdatedAt     time.Time
 }
 
 // Services is the modle for services

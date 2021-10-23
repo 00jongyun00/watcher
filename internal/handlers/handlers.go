@@ -131,7 +131,13 @@ func (repo *DBRepo) Host(w http.ResponseWriter, r *http.Request) {
 	id, _ := strconv.Atoi(chi.URLParam(r, "id"))
 	var h models.Host
 	if id > 0 {
-		// get the host from the data
+		// get the host from the database
+		host, err := repo.DB.GetHostById(id)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		h = host
 	}
 	vars := make(jet.VarMap)
 	vars.Set("host", h)

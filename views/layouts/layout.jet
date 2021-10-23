@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta></meta>
+
     <link rel="shortcut icon" href="/static/admin/img/icons/icon-48x48.png"/>
 
     <title>Vigilate</title>
@@ -29,7 +31,6 @@
             box-shadow: none;
             height: 50px;
         }
-
         .notie-textbox-inner {
             line-height: 10pt;
             font-size: 14pt;
