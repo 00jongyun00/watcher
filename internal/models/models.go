@@ -50,7 +50,7 @@ type Host struct {
 	IPV6          string
 	Location      string
 	OS            string
-	Activte       int
+	Active       int
 	CreatedAt     time.Time
 	Updated       time.Time
 }
