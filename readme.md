@@ -1,4 +1,4 @@
-# Pusher
+# Watcher
 
 This is the source code for the second project in the Udemy course Working with Websockets in Go (Golang).
 
