@@ -153,33 +153,45 @@ func (repo *DBRepo) PostHost(w http.ResponseWriter, r *http.Request) {
 	id, _ := strconv.Atoi(chi.URLParam(r, "id"))
 
 	var h models.Host
-	var hostID int
 
 	if id > 0 {
 		// get the host from the database
-	} else {
-		// jet 파일의 input tag name 과 일치하는 것을 가져온다.
-		h.HostName = r.Form.Get("host_name")
-		h.CanonicalName = r.Form.Get("canonical_name")
-		h.URL = r.Form.Get("url")
-		h.IP = r.Form.Get("ip")
-		h.IPV6 = r.Form.Get("ipv6")
-		h.Location = r.Form.Get("location")
-		h.OS = r.Form.Get("os")
-		active, _ := strconv.Atoi(r.Form.Get("active"))
-		h.Active = active
+		host, err := repo.DB.GetHostById(id)
+		if err != nil {
+			log.Panicln(err)
+			return
+		}
+		h = host
+	}
 
+	// jet 파일의 input tag name 과 일치하는 것을 가져온다.
+	h.HostName = r.Form.Get("host_name")
+	h.CanonicalName = r.Form.Get("canonical_name")
+	h.URL = r.Form.Get("url")
+	h.IP = r.Form.Get("ip")
+	h.IPV6 = r.Form.Get("ipv6")
+	h.Location = r.Form.Get("location")
+	h.OS = r.Form.Get("os")
+	active, _ := strconv.Atoi(r.Form.Get("active"))
+	h.Active = active
+
+	if id > 0 {
+		err := repo.DB.UpdateHost(h)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+	} else {
 		newId, err := repo.DB.InsertHost(h)
 		if err != nil {
 			log.Println(err)
 			helpers.ServerError(w, r, err)
 			return
 		}
-		hostID = newId
+		h.ID = newId
 	}
-
 	repo.App.Session.Put(r.Context(), "flash", "Changei saved")
-	http.Redirect(w, r, fmt.Sprintf("/admin/host/%d", hostID), http.StatusSeeOther)
+	http.Redirect(w, r, fmt.Sprintf("/admin/host/%d", h.ID), http.StatusSeeOther)
 }
 
 // AllUsers lists all admin users

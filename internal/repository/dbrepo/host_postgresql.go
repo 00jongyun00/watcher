@@ -2,6 +2,7 @@ package dbrepo
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"time"
 
@@ -79,7 +80,7 @@ func (m *postgresDBRepo) UpdateHost(h models.Host) error {
 
 	stmt := `
     update hosts set host_name = $1, canonical_name = $2, url = $3, ip = $4, ipv6 = $5, os = $6,
-    activate = $7, location = &8, updated_at = $9 where id = $10`
+    activate = $7, location = $8, updated_at = $9 where id = $10`
 
 	_, err := m.DB.ExecContext(ctx, stmt,
 		h.HostName,
@@ -95,6 +96,7 @@ func (m *postgresDBRepo) UpdateHost(h models.Host) error {
 	)
 
 	if err != nil {
+		fmt.Println("here")
 		log.Println(err)
 		return err
 	}
