@@ -51,9 +51,9 @@
                 <td>{{.Location}}</td>
                 <td>
                   {{if .Active == 1}}
-                    <span class="text-success">Active</span>
+                    <span class="badge bg-success">Active</span>
                   {{else}}
-                    <span class="text-danger">InActive</span>
+                    <span class="badge bg-danger">InActive</span>
                   {{end}}
                 </td>
               </tr>

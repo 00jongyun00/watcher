@@ -8351,6 +8351,7 @@ Host	internal/models/models.go	/^type Host struct {$/;"	s	package:models
 HostID	internal/models/models.go	/^	HostID         int$/;"	m	struct:models.HostService	typeref:typename:int
 HostName	internal/models/models.go	/^	HostName      string$/;"	m	struct:models.Host	typeref:typename:string
 HostService	internal/models/models.go	/^type HostService struct {$/;"	s	package:models
+HostServices	internal/models/models.go	/^	HostServices  []HostService$/;"	m	struct:models.Host	typeref:typename:[]HostService
 HumanDate	internal/helpers/template-functions.go	/^func HumanDate(t time.Time) string {$/;"	f	package:helpers	typeref:typename:string
 ID	internal/models/models.go	/^	ID             int$/;"	m	struct:models.HostService	typeref:typename:int
 ID	internal/models/models.go	/^	ID            int$/;"	m	struct:models.Host	typeref:typename:int
@@ -8429,6 +8430,7 @@ Scheduler	internal/config/config.go	/^	Scheduler     *cron.Cron$/;"	m	struct:con
 SendEmail	internal/helpers/send-mail.go	/^func SendEmail(mailMessage channeldata.MailData) {$/;"	f	package:helpers
 ServerError	internal/handlers/handlers.go	/^func ServerError(w http.ResponseWriter, r *http.Request, err error) {$/;"	f	package:handlers
 ServerError	internal/helpers/helpers.go	/^func ServerError(w http.ResponseWriter, r *http.Request, err error) {$/;"	f	package:helpers
+Service	internal/models/models.go	/^	Service        Services$/;"	m	struct:models.HostService	typeref:typename:Services
 ServiceID	internal/models/models.go	/^	ServiceID      int$/;"	m	struct:models.HostService	typeref:typename:int
 ServiceName	internal/models/models.go	/^	ServiceName string$/;"	m	struct:models.Services	typeref:typename:string
 Services	internal/models/models.go	/^type Services struct {$/;"	s	package:models

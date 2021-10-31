@@ -138,7 +138,30 @@ Host
 
                     <div class="tab-pane fade" role="tabpanel" aria-labelledby="services-tab"
                          id="services-content">
-                        services content
+                         <div class="row">
+                            <div class="col">
+                                <h3 class="mt-3">Services</h3>
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>HTTP</td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" value="1" {{if host.Active == 1}} checked {{end}} type="checkbox" id="http" name="http">
+                                                <label class="form-check-label" for="active">Active</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                         </div>
                     </div>
 
                     <div class="tab-pane fade" role="tabpanel" aria-labelledby="healthy-tab"
