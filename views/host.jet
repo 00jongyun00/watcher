@@ -222,8 +222,11 @@ Host
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log("called ajax");
-                    console.log("Ok is", data.ok);
+                  if (data.ok) {
+                    successAlert("Changes saved");
+                  } else {
+                    errorAlert("Something went wrong");
+                  }
                 })
             })
         }
