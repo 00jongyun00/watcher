@@ -8400,6 +8400,7 @@ NewWorker	cmd/web/jobs-mail.go	/^func NewWorker(id int, workerPool chan chan cha
 New_Pattern	static/assets/img/error-404-monochrome.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" viewB/;"	d
 New_Pattern	static/assets/img/error-404-monochrome.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" xmlns:xlink="http:\/\/www.w3.org\/1999\/xlink" viewB/;"	i
 NoSurf	cmd/web/middleware.go	/^func NoSurf(next http.Handler) http.Handler {$/;"	f	package:main	typeref:typename:http.Handler
+OK	internal/handlers/handlers.go	/^	OK bool `json:"ok"`$/;"	m	struct:handlers.serviceJSON	typeref:typename:bool
 OS	internal/models/models.go	/^	OS            string$/;"	m	struct:models.Host	typeref:typename:string
 OneUser	internal/handlers/handlers.go	/^func (repo *DBRepo) OneUser(w http.ResponseWriter, r *http.Request) {$/;"	f	struct:handlers.DBRepo
 Password	internal/models/models.go	/^	Password    []byte$/;"	m	struct:models.User	typeref:typename:[]byte
@@ -8449,6 +8450,7 @@ TemplateData	internal/templates/templates.go	/^type TemplateData struct {$/;"	s	
 TestPusher	internal/handlers/pusher.go	/^func (repo *DBRepo) TestPusher(w http.ResponseWriter, r *http.Request) {$/;"	f	unknown:handlers.DBRepo
 ToAddress	internal/channeldata/maildata.go	/^	ToAddress    string$/;"	m	struct:channeldata.MailData	typeref:typename:string
 ToName	internal/channeldata/maildata.go	/^	ToName       string$/;"	m	struct:channeldata.MailData	typeref:typename:string
+ToggleServiceForHost	internal/handlers/handlers.go	/^func (repo *DBRepo) ToggleServiceForHost(w http.ResponseWriter, r *http.Request) {$/;"	f	struct:handlers.DBRepo
 U	static/admin/js/pusher.min.js	/^!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==/;"	f
 URL	internal/models/models.go	/^	URL           string$/;"	m	struct:models.Host	typeref:typename:string
 UpdateHost	internal/repository/dbrepo/host_postgresql.go	/^func (m *postgresDBRepo) UpdateHost(h models.Host) error {$/;"	f	unknown:dbrepo.postgresDBRepo	typeref:typename:error
@@ -9038,6 +9040,7 @@ select.form-control[size]	static/css/styles.css	/^select.form-control[size], sel
 send	static/admin/js/pusher.min.js	/^!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==/;"	m	class:e
 send	static/admin/js/pusher.min.js	/^!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==/;"	m	class:t
 send_event	static/admin/js/pusher.min.js	/^!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==/;"	m	class:e
+serviceJSON	internal/handlers/handlers.go	/^type serviceJSON struct {$/;"	s	package:handlers
 service_id	migrations/schema.sql	/^    service_id integer NOT NULL,$/;"	E	table:host_services
 service_name	migrations/schema.sql	/^    service_name character varying(255) NOT NULL,$/;"	E	table:services
 services	migrations/schema.sql	/^CREATE TABLE public.services ($/;"	t
